@@ -24,7 +24,7 @@ def celebration():
 
 @app.route('/save-response', methods=['POST'])
 def save_response():
-    """Save Pavni's response with timestamp"""
+    """Save Anika's response with timestamp"""
     try:
         data = request.get_json()
         response = data.get('response', 'Unknown')
@@ -32,7 +32,7 @@ def save_response():
         
         # Save to file
         with open(RESPONSES_FILE, 'a') as f:
-            f.write(f"{timestamp} - Pavni's response: {response}\n")
+            f.write(f"{timestamp} - Anika's response: {response}\n")
         
         return jsonify({'status': 'success', 'message': 'Response saved!'})
     except Exception as e:
