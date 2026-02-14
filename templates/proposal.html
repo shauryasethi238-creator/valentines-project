@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="proposal-page">
+    <div class="hearts-background"></div>
+    
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle" title="Toggle Music">
+        🔇
+    </button>
+    
+    <!-- Countdown Timer
+    <div class="countdown-container">
+        <p class="countdown-label">Valentine's Day 2026</p>
+        <div id="countdown" class="countdown-timer"></div>
+    </div> -->
+    
+    <div class="proposal-container fade-in">
+        <div class="proposal-content">
+            <h1 class="proposal-title">Dear Anika,</h1>
+            <div class="proposal-message">
+                <p>Every moment with you feels like magic ✨</p>
+                <p>You make my heart skip a beat 💓</p>
+                <p>And I can't imagine Valentine's Day without you...</p>
+            </div>
+            
+            <h2 class="proposal-question">Will you be my Valentine? 🌹</h2>
+            
+            <div class="buttons-container">
+                <button class="yes-button" id="yesButton">
+                    YES! 💕
+                </button>
+                <button class="no-button" id="noButton">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

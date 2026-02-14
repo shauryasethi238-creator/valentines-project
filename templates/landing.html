@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for Anika 💕</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="landing-page">
+    <div class="hearts-background"></div>
+    
+    <div class="landing-container fade-in">
+        <div class="heart-icon pulse">💖</div>
+        <h1 class="landing-title">Hey Anika...</h1>
+        <p class="landing-subtitle">I have something special to ask you</p>
+        <button class="enter-button" onclick="window.location.href='/proposal'">
+            Click to Continue
+            <span class="button-heart">❤️</span>
+        </button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

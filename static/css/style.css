@@ -1,0 +1,557 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ===== BACKGROUND GRADIENTS ===== */
+.landing-page {
+    background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 50%, #FFB6C1 100%);
+}
+
+.proposal-page {
+    background: linear-gradient(135deg, #FF69B4 0%, #FF1493 50%, #DC143C 100%);
+}
+
+.celebration-page {
+    background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #FF1493 100%);
+}
+
+/* ===== FLOATING HEARTS BACKGROUND ===== */
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hearts-background::before,
+.hearts-background::after {
+    content: '💕';
+    position: absolute;
+    font-size: 30px;
+    animation: float 15s infinite ease-in-out;
+    opacity: 0.3;
+}
+
+.hearts-background::before {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts-background::after {
+    content: '💖';
+    left: 80%;
+    animation-delay: 7s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* ===== LANDING PAGE ===== */
+.landing-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.heart-icon {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.landing-title {
+    font-size: 3.5rem;
+    color: #DC143C;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.landing-subtitle {
+    font-size: 1.5rem;
+    color: #8B0000;
+    margin-bottom: 50px;
+}
+
+.enter-button {
+    background: linear-gradient(135deg, #FF1493, #DC143C);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.enter-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+}
+
+.button-heart {
+    animation: heartbeat 1.5s infinite;
+}
+
+/* ===== PROPOSAL PAGE ===== */
+.proposal-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.proposal-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    text-align: center;
+}
+
+.proposal-title {
+    font-size: 2.5rem;
+    color: #DC143C;
+    margin-bottom: 30px;
+}
+
+.proposal-message {
+    margin-bottom: 40px;
+}
+
+.proposal-message p {
+    font-size: 1.3rem;
+    color: #8B0000;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.proposal-question {
+    font-size: 2rem;
+    color: #FF1493;
+    margin-bottom: 40px;
+    animation: pulse 2s infinite;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #32CD32, #228B22);
+    color: white;
+    border: none;
+    padding: 25px 60px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(50, 205, 50, 0.4);
+    font-weight: bold;
+}
+
+.yes-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(50, 205, 50, 0.6);
+}
+
+.no-button {
+    background: linear-gradient(135deg, #DC143C, #8B0000);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* ===== MUSIC TOGGLE ===== */
+.music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* ===== COUNTDOWN TIMER ===== */
+.countdown-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: #DC143C;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.countdown-timer {
+    font-size: 1.2rem;
+    color: #8B0000;
+    font-weight: bold;
+}
+
+/* ===== CELEBRATION PAGE ===== */
+.celebration-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.celebration-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    text-align: center;
+}
+
+.celebration-hearts {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.heart-emoji {
+    display: inline-block;
+    margin: 0 10px;
+    animation: heartbeat 1s infinite;
+}
+
+.heart-emoji:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.heart-emoji:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.celebration-title {
+    font-size: 4rem;
+    color: #FF1493;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite;
+}
+
+.celebration-message {
+    margin-bottom: 40px;
+}
+
+.message-line {
+    font-size: 1.4rem;
+    color: #8B0000;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.celebration-quote {
+    background: linear-gradient(135deg, #FFE4E1, #FFF0F5);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+    border-left: 5px solid #FF1493;
+}
+
+.celebration-quote p {
+    font-size: 1.1rem;
+    color: #8B0000;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.quote-author {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #DC143C;
+}
+
+.celebration-footer {
+    margin-top: 40px;
+}
+
+.footer-text {
+    font-size: 1.5rem;
+    color: #DC143C;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.beating-heart {
+    font-size: 50px;
+    display: inline-block;
+    animation: heartbeat 1s infinite;
+}
+
+/* ===== CONFETTI CANVAS ===== */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+
+/* ===== CELEBRATION PHOTO SECTION ===== */
+.celebration-photo {
+    margin: 40px 0;
+    animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
+.photo-frame {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    background: linear-gradient(135deg, #FFE4E1, #FFF0F5);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05);
+}
+
+.couple-photo {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-caption {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #DC143C;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+}
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .landing-title {
+        font-size: 2.5rem;
+    }
+    
+    .landing-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .heart-icon {
+        font-size: 60px;
+    }
+    
+    .proposal-content {
+        padding: 30px 20px;
+    }
+    
+    .proposal-title {
+        font-size: 2rem;
+    }
+    
+    .proposal-message p {
+        font-size: 1.1rem;
+    }
+    
+    .proposal-question {
+        font-size: 1.5rem;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .yes-button {
+        padding: 20px 50px;
+        font-size: 1.3rem;
+    }
+    
+    .no-button {
+        padding: 12px 35px;
+    }
+    
+    .celebration-content {
+        padding: 30px 20px;
+    }
+    
+    .celebration-title {
+        font-size: 3rem;
+    }
+    
+    .message-line {
+        font-size: 1.2rem;
+    }
+    
+    .countdown-container {
+        top: 10px;
+        left: 10px;
+        padding: 10px 15px;
+    }
+    
+    .countdown-timer {
+        font-size: 1rem;
+    }
+    
+    .music-toggle {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    
+    .photo-frame {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .photo-caption {
+        font-size: 1rem;
+    }
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-title {
+        font-size: 2rem;
+    }
+    
+    .enter-button {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+    
+    .proposal-title {
+        font-size: 1.7rem;
+    }
+    
+    .celebration-title {
+        font-size: 2.5rem;
+    }
+    
+    .celebration-hearts {
+        font-size: 40px;
+    }
+}
+
+/* Made with Bob */

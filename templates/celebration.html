@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! 💕 She Said Yes!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="celebration-page">
+    <canvas id="confetti-canvas"></canvas>
+    
+    <div class="celebration-container fade-in">
+        <div class="celebration-content">
+            <div class="celebration-hearts">
+                <span class="heart-emoji">💖</span>
+                <span class="heart-emoji">💕</span>
+                <span class="heart-emoji">💗</span>
+            </div>
+            
+            <h1 class="celebration-title">Yay! 🎉</h1>
+            
+            <div class="celebration-message">
+                <p class="message-line">Every smile of yours feels like home, and every moment with you is my favorite. 💖</p>
+                <p class="message-line">Thank you for choosing me, for being my peace, my happiness, and my person. 🌹✨</p>
+                <p class="message-line">I love you, Anika. Happy Valentine’s Day 💘</p>
+                <p class="message-line">— Yours, always ❤️🌹</p>
+                
+            </div>
+            
+            <!-- Photo Section -->
+            <div class="celebration-photo">
+                <div class="photo-frame">
+                    <img src="{{ url_for('static', filename='images/couple-photo.jpg') }}" alt="Our Special Moment" class="couple-photo">
+                    <div class="photo-caption">Our Beautiful Journey Together 💕</div>
+                </div>
+            </div>
+            
+            <div class="celebration-quote">
+                <p>"In all the world, there is no heart for me like yours.</p>
+                <p>In all the world, there is no love for you like mine."</p>
+                <p class="quote-author">- Maya Angelou</p>
+            </div>
+            
+            <div class="celebration-footer">
+                <p class="footer-text">With all my love, Shaurya ❤️</p>
+                <div class="heart-animation">
+                    <span class="beating-heart">💕</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/confetti.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
